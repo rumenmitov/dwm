@@ -78,11 +78,13 @@ static const char *volumedowncmd[] = { "pamixer", "-d", "10", NULL };
 static const char *mutecmd[] = { "pamixer", "-t", NULL };
 static const char *screenshotcmd[] = { "flameshot", "gui", NULL };
 static const char *xkillcmd[] = { "xkill", NULL };
-static const char *powermenucmd[] = { "./~/.local/share/scripts/power-menu.sh", NULL };
-static const char *emojicmd[] = { "~/.local/share/scripts/emojis.sh", NULL };
-static const char *mathcmd[] = { "~/.local/share/scripts/math-symbols.sh", NULL };
-static const char *clipboardcmd[] = { "~/.local/share/scripts/clipboard.sh", NULL };
-static const char *wallpapercmd[] = { "~/.local/share/scripts/wallpaper.sh", NULL };
+
+/* scripts */
+static const char powermenu[] = "~/.local/share/scripts/power-menu.sh";
+static const char emoji[] = "~/.local/share/scripts/emojis.sh";
+static const char math[] = "~/.local/share/scripts/math-symbols.sh";
+static const char clipboard[] = "~/.local/share/scripts/clipboard.sh";
+static const char wallpaper[] = "~/.local/share/scripts/wallpaper.sh";
 
 static Keychord *keychords[] = {
        /* Keys        function        argument */
@@ -105,11 +107,11 @@ static Keychord *keychords[] = {
        &((Keychord){1, {{MODKEY|ShiftMask, XK_c}},                             spawn,          {.v = xkillcmd } }),
 
        /* Popup Menus */
-       &((Keychord){1, {{MODKEY|ShiftMask, XK_q}},                             spawn,          {.v = powermenucmd} }),
-       &((Keychord){1, {{MODKEY, XK_e}},                                       spawn,          {.v = emojicmd } }),
-       &((Keychord){1, {{MODKEY|ShiftMask, XK_e}},                             spawn,          {.v = mathcmd } }),
-       &((Keychord){1, {{MODKEY|ShiftMask, XK_v}},                             spawn,          {.v = clipboardcmd} }),
-       &((Keychord){1, {{MODKEY, XK_w}},                                       spawn,          {.v = wallpapercmd} }),
+       &((Keychord){1, {{MODKEY|ShiftMask, XK_q}},                             spawn,          SHCMD(powermenu) }),
+       &((Keychord){1, {{MODKEY, XK_e}},                                       spawn,          SHCMD(emoji) }),
+       &((Keychord){1, {{MODKEY|ShiftMask, XK_e}},                             spawn,          SHCMD(math) }),
+       &((Keychord){1, {{MODKEY|ShiftMask, XK_v}},                             spawn,          SHCMD(clipboard) }),
+       &((Keychord){1, {{MODKEY, XK_w}},                                       spawn,          SHCMD(wallpaper) }),
 
        /* System */
        &((Keychord){2, {{MODKEY, XK_c}, {NULL, XK_Return}},                    killclient,     {0} }),
