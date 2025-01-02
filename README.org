@@ -2,6 +2,8 @@
 #+author: Rumen Mitov
 #+email: rumenmitov@protonmail.com
 
+[[./assets/rice.png]]
+
 * Requirements
 ** X-Server
 - xorg
