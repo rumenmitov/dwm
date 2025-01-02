@@ -27,9 +27,9 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	/* class  instance  title  tags mask  isfloating  monitor  scratch key*/
+	{ NULL, NULL, "scratchpad", NULL, 1, -1 , 's'},
+	{ "Thunar", NULL, NULL, NULL, 1, -1 , 'f'},
 };
 
 /* tagging */
@@ -65,10 +65,11 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *termcmd[]  = { "st", NULL };
+static const char *scratchpadcmd[] = {"s", "st", "-t", "scratchpad", NULL};
 static const char *dmenucmd[] = { "dmenu_run", NULL };
 static const char *emacscmd[] = { "emacsclient", "-c", NULL };
 static const char *browsercmd[] = { "zen", NULL };
-static const char *filemanagercmd[] = { "thunar", NULL };
+static const char *filemanagercmd[] = { "f", "thunar", NULL };
 static const char *musiccmd[] = { "spotube", NULL };
 static const char *brightnessupcmd[] = { "brightnessctl", "set", "+5", NULL };
 static const char *brightnessdowncmd[] = { "brightnessctl", "set", "-5", NULL };
@@ -88,11 +89,12 @@ static const char wallpaper[] = "~/.local/share/scripts/wallpaper.sh";
 static Keychord *keychords[] = {
        /* Keys        function        argument */
        &((Keychord){1, {{MODKEY, XK_Return}},                                  spawn,          {.v = termcmd } }),
+       &((Keychord){1, {{MODKEY|ShiftMask, XK_Return}},                        togglescratch,  {.v = scratchpadcmd } }),
 
        /* Applications */
        &((Keychord){2, {{MODKEY, XK_x}, {NULL, XK_Return}},                    spawn,          {.v = emacscmd } }),
        &((Keychord){2, {{MODKEY, XK_x}, {NULL, XK_b}},                         spawn,          {.v = browsercmd } }),
-       &((Keychord){2, {{MODKEY, XK_x}, {NULL, XK_f}},                         spawn,          {.v = filemanagercmd } }),
+       &((Keychord){2, {{MODKEY, XK_x}, {NULL, XK_f}},                         togglescratch,  {.v = filemanagercmd } }),
        &((Keychord){2, {{MODKEY, XK_x}, {NULL, XK_m}},                         spawn,          {.v = musiccmd } }),
        &((Keychord){2, {{MODKEY, XK_x}, {NULL, XK_x}},                         spawn,          {.v = dmenucmd } }),
 
