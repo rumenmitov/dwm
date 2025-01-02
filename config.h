@@ -11,7 +11,11 @@ static       int smartgaps                       = 1;        /* 1 means no outer
 static const int showbar                         = 1;        /* 0 means no bar */
 static const int topbar                          = 1;        /* 0 means bottom bar */
 static const char *barlayout                     = "tn|s";
-static const char *fonts[]                       = { "Hack Nerd Font:size=18", "JetBrains Mono:size=18" };
+static const char *fonts[]                       = { 
+    "Hack Nerd Font:size=18", 
+    "JetBrains Mono:size=18",
+    "Noto Color Emoji:size=18",
+};
 static const char col_bg[]                       = "#27251f";
 static const char col_active[]                   = "#9bf6ff";
 static const char col_inactive[]                 = "#c4ced4";
