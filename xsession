@@ -1,0 +1,19 @@
+xrandr --output eDP --primary --mode 1920x1200 &
+xrandr --output HDMI-A-0 --mode 1920x1080 --right-of eDP &
+xset dpms 0 0 0 && xset s noblank  && xset s off &
+setxkbmap -layout us,de,bg -variant ,,phonetic -option 'grp:shift_caps_toggle' &
+~/.local/share/scripts/battery-warning.sh &
+~/.fehbg &
+pipewire &
+picom --backend glx &
+numlockx &
+xsetroot -cursor_name left_ptr &
+xinput --set-prop 9 310 0.8 &
+greenclip daemon &
+emacs --daemon &
+/usr/libexec/polkit-gnome-authentication-agent-1 &
+kdeconnectd & 
+nextcloud --background &
+
+exec dwm
+
