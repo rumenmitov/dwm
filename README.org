@@ -1,0 +1,97 @@
+#+title: DWM - Configuration
+#+author: Rumen Mitov
+#+email: rumenmitov@protonmail.com
+
+* Requirements
+** X-Server
+- xorg
+- xclip
+- xsel
+- xterm
+- xtools
+- xrandr
+- brightnessctl
+- numlockx
+- NetworkManager
+- acpi
+
+** Audio and Bluetooth
+- pamixer
+- pipewire
+- wireplumber
+- alsa-utils
+- bluez
+- bluez-utils
+- blueman-manager
+  
+** Authentication
+- polkit-gnome
+- gnome-keyring
+- gnome-ssh-askpass
+- pinentry-gtk
+- pass
+
+** Window Manager
+- dwm
+- [[https://github.com/rumenmitov/slstatus.git][slstatus]]
+- feh
+- greenclip
+- [[https://github.com/rumenmitov/dmenu.git][dmenu]]
+- picom
+- flameshot
+- i3lock
+- xdg-desktop-portal
+- xdg-desktop-portal-gtk
+- xdg-desktop-portal-kde  
+
+** Applications
+- [[https://github.com/rumenmitov/st.git][st]]
+- thunar
+- spotube
+- kdeconnect
+- nextcloud
+
+* Installation
+Inside the *dwm* directory:
+#+begin_src shell
+  sudo make clean install
+#+end_src
+
+** Startup
+If your Display Manager uses *xsession* (e.g. SDDM):
+#+begin_src shell
+  cd $HOME
+  rm .xsession
+  ln -s /<absolute-path-to-dwm>/xsession .xsession
+#+end_src
+
+An example for */usr/share/xsessions/default.desktop*:
+#+begin_example
+[Desktop Entry]
+Name=Rumen's WM
+Type=Application
+Exec=default
+#+end_example
+
+* Development
+All of these steps are inside the *dwm* directory.
+
+#+begin_src shell
+  # Get patch
+  cd patches
+  wget <patch-url>
+  git add <patch-file>
+  cd ../
+
+  # Apply patch
+  patch -p1 < patches/<patch-file>
+
+  # Fix FAILED files
+
+  # Difftool to apply changes to the user config
+  nvim -d config.h config.def.h
+
+  # Rebuild and restart dwm
+  sudo make clean install
+  pkill dwm
+#+end_src
