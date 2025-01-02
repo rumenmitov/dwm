@@ -4,6 +4,7 @@ xset dpms 0 0 0 && xset s noblank  && xset s off &
 setxkbmap -layout us,de,bg -variant ,,phonetic -option 'grp:shift_caps_toggle' &
 ~/.local/share/scripts/battery-warning.sh &
 ~/.fehbg &
+slstatus &
 pipewire &
 picom --backend glx &
 numlockx &
