@@ -78,4 +78,5 @@
   	    XF86XK_AudioMute                  Toggle Mute 
   	    Super + Shift + s                  Screenshot 
   	    Super + Shift + x                  Super Kill 
+  	    Shift + CapsLock                Change Keymap 
   	   -----------------------------------------------
