@@ -1658,6 +1658,7 @@ setmfact(const Arg *arg)
     if (arg->f <= -1.0) {
         selmon->mfact = MASTER_DEFAULT;
         arrange(selmon);
+        return;
     }
 
 	float f;
