@@ -37,6 +37,7 @@
 - dwm
 - [[https://github.com/rumenmitov/slstatus.git][slstatus]]
 - feh
+- xmessage
 - greenclip
 - [[https://github.com/rumenmitov/dmenu.git][dmenu]]
 - picom
