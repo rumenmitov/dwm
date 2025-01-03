@@ -24,21 +24,22 @@
 
   _Prefix:_ `Super + c'
 
-       -----------------------------------------------------------
-        Super + [1..9]                       Switch to Tag [1..9] 
-        Super + Shift + [1..9]            Move Tile to Tag [1..9] 
-        Prefix + Return                                      Kill 
-        Prefix + b                              Toggle Status Bar 
-        Prefix + m                                  Switch Master 
-        Prefix + v                              View Applications 
-        Prefix + f                                Toggle Floating 
-        Super + [j, k]                          [next, prev] Tile 
-        Super + [h, l]          Move Tile Separator [left, right] 
-        Super + .                                    Next Monitor 
-        Super + ,                                Previous Monitor 
-        Super + Shift + .               Move Tile to Next Monitor 
-        Super + Shift + ,               Move Tile to Prev Monitor 
-       -----------------------------------------------------------
+       ------------------------------------------------------------
+        Super + [1..9]                        Switch to Tag [1..9] 
+        Super + Shift + [1..9]             Move Tile to Tag [1..9] 
+        Prefix + Return                                       Kill 
+        Prefix + b                               Toggle Status Bar 
+        Prefix + m                                   Switch Master 
+        Prefix + v                               View Applications 
+        Prefix + f                                 Toggle Floating 
+        Super + [j, k]                           [next, prev] Tile 
+        Super + [h, l]           Move Tile Separator [left, right] 
+        Super + Equal           Restores Tile Separator to Default 
+        Super + .                                     Next Monitor 
+        Super + ,                                 Previous Monitor 
+        Super + Shift + .                Move Tile to Next Monitor 
+        Super + Shift + ,                Move Tile to Prev Monitor 
+       ------------------------------------------------------------
 
 
 3 Applications

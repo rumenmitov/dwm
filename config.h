@@ -41,7 +41,8 @@ static const Rule rules[] = {
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 /* layout(s) */
-static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+#define MASTER_DEFAULT 0.55
+static const float mfact     = MASTER_DEFAULT; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
@@ -84,7 +85,7 @@ static const char *browsercmd[] = { "zen", NULL };
 static const char *filemanagercmd[] = { "f", "thunar", NULL };
 static const char *musiccmd[] = { "spotube", NULL };
 static const char *brightnessupcmd[] = { "brightnessctl", "set", "+5", NULL };
-static const char *brightnessdowncmd[] = { "brightnessctl", "set", "-5", NULL };
+static const char *brightnessdowncmd[] = { "brightnessctl", "set", "5-", NULL };
 static const char *volumeupcmd[] = { "pamixer", "-i", "10", NULL };
 static const char *volumedowncmd[] = { "pamixer", "-d", "10", NULL };
 static const char *mutecmd[] = { "pamixer", "-t", NULL };
@@ -137,6 +138,7 @@ static Keychord *keychords[] = {
        &((Keychord){1, {{MODKEY, XK_k}},                                       focusstack,     {.i = -1 } }),
        &((Keychord){1, {{MODKEY, XK_h}},                                       setmfact,       {.f = -0.05} }),
        &((Keychord){1, {{MODKEY, XK_l}},                                       setmfact,       {.f = +0.05} }),
+       &((Keychord){1, {{MODKEY, XK_equal}},                                   setmfact,       {.f = -1.0} }),
        &((Keychord){1, {{MODKEY, XK_comma}},                                   focusmon,       {.i = -1 } }),
        &((Keychord){1, {{MODKEY, XK_period}},                                  focusmon,       {.i = +1 } }),
        &((Keychord){1, {{MODKEY|ShiftMask, XK_comma}},                         tagmon,         {.i = -1 } }),
