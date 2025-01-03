@@ -1,0 +1,81 @@
+                             ______________
+
+                              DWM KEYBINDS
+
+                              Rumen Mitov
+                             ______________
+
+
+
+
+
+1 General
+=========
+
+  	   ------------------------------------------------
+  	    Super + Shift + /       Help Menu (scratchpad) 
+  	    Super + Return                        Terminal 
+  	    Super + Shift + Return   Terminal (scratchpad) 
+  	   ------------------------------------------------
+
+
+2 System
+========
+
+  _Prefix:_ `Super + c'
+
+       -----------------------------------------------------------
+        Super + [1..9]                       Switch to Tag [1..9] 
+        Super + Shift + [1..9]            Move Tile to Tag [1..9] 
+        Prefix + Return                                      Kill 
+        Prefix + b                              Toggle Status Bar 
+        Prefix + m                                  Switch Master 
+        Prefix + v                              View Applications 
+        Prefix + f                                Toggle Floating 
+        Super + [j, k]                          [next, prev] Tile 
+        Super + [h, l]          Move Tile Separator [left, right] 
+        Super + .                                    Next Monitor 
+        Super + ,                                Previous Monitor 
+        Super + Shift + .               Move Tile to Next Monitor 
+        Super + Shift + ,               Move Tile to Prev Monitor 
+       -----------------------------------------------------------
+
+
+3 Applications
+==============
+
+  _Prefix:_ `Super + x'
+
+  	     --------------------------------------------
+  	      Prefix + Return             Emacs (client) 
+  	      Prefix + b                         Browser 
+  	      Prefix + f       File Manager (scratchpad) 
+  	      Prefix + m                           Music 
+  	      Prefix + x            Application Launcher 
+  	     --------------------------------------------
+
+
+4 Popup Menus
+=============
+
+  		 -----------------------------------
+  		  Super + q              Power Menu 
+  		  Super + e              Emoji Menu 
+  		  Super + Shift + e       Math Menu 
+  		  Super + Shift + v  Clipboard Menu 
+  		  Super + w          Wallpaper Menu 
+  		 -----------------------------------
+
+
+5 Utils
+=======
+
+  	   -----------------------------------------------
+  	    XF86XK_MonBrightnessUp    Increase Brightness 
+  	    XF86XK_MonBrightnessDown  Decrease Brightness 
+  	    XF86XK_AudioRaiseVolume       Increase Volume 
+  	    XF86XK_AudioLowerVolume       Decrease Volume 
+  	    XF86XK_AudioMute                  Toggle Mute 
+  	    Super + Shift + s                  Screenshot 
+  	    Super + Shift + x                  Super Kill 
+  	   -----------------------------------------------

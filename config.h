@@ -34,6 +34,7 @@ static const Rule rules[] = {
 	/* class  instance  title  tags mask  isfloating  monitor  scratch key*/
 	{ NULL, NULL, "scratchpad", NULL, 1, -1 , 's'},
 	{ "Thunar", NULL, NULL, NULL, 1, -1 , 'f'},
+	{ NULL, NULL, "xmessage", NULL, 1, -1 , '?'},
 };
 
 /* tagging */
@@ -68,6 +69,13 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
+
+static const char *helpcmd[]  = { "?", "xmessage", 
+    "-center", "-buttons", "", 
+    "-file", "/home/rumen/.config/dwm/docs/keybinds.txt",
+    NULL 
+};
+
 static const char *termcmd[]  = { "st", NULL };
 static const char *scratchpadcmd[] = {"s", "st", "-t", "scratchpad", NULL};
 static const char *dmenucmd[] = { "dmenu_run", NULL };
@@ -92,6 +100,7 @@ static const char wallpaper[] = "~/.local/share/scripts/wallpaper.sh";
 
 static Keychord *keychords[] = {
        /* Keys        function        argument */
+       &((Keychord){1, {{MODKEY|ShiftMask, XK_slash}},                         togglescratch,  {.v = helpcmd } }),
        &((Keychord){1, {{MODKEY, XK_Return}},                                  spawn,          {.v = termcmd } }),
        &((Keychord){1, {{MODKEY|ShiftMask, XK_Return}},                        togglescratch,  {.v = scratchpadcmd } }),
 
@@ -112,7 +121,7 @@ static Keychord *keychords[] = {
        &((Keychord){1, {{MODKEY|ShiftMask, XK_c}},                             spawn,          {.v = xkillcmd } }),
 
        /* Popup Menus */
-       &((Keychord){1, {{MODKEY|ShiftMask, XK_q}},                             spawn,          SHCMD(powermenu) }),
+       &((Keychord){1, {{MODKEY, XK_q}},                                       spawn,          SHCMD(powermenu) }),
        &((Keychord){1, {{MODKEY, XK_e}},                                       spawn,          SHCMD(emoji) }),
        &((Keychord){1, {{MODKEY|ShiftMask, XK_e}},                             spawn,          SHCMD(math) }),
        &((Keychord){1, {{MODKEY|ShiftMask, XK_v}},                             spawn,          SHCMD(clipboard) }),
