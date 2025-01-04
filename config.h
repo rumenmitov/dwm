@@ -45,6 +45,8 @@ static const Rule rules[] = {
 	{ NULL, NULL, "xmessage", NULL, 1, -1 , '?', "❔"},
 	{ NULL, NULL, "Zen Browser", NULL, NULL, -1 , 0, "󰈹"},
 	{ "Emacs", NULL, NULL, NULL, NULL, -1 , 0, ""},
+	{ "Nextcloud", NULL, NULL, NULL, NULL, -1 , 0, "☁️"},
+	{ "Spotube", NULL, NULL, NULL, NULL, -1 , 0, "🎧"},
 };
 
 /* tagging */
