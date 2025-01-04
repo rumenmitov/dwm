@@ -27,15 +27,23 @@ static const char *colors[][3]      = {
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
+/* appicons */
+/* NOTE: set to 0 to set to default (whitespace) */
+static char outer_separator_beg      = '[';
+static char outer_separator_end      = ']';
+static char inner_separator          = ' ';
+static unsigned truncate_icons_after = 2; /* will default to 1, that is the min */
+static char truncate_symbol[]         = "...";
+
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor    scratch key */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1,        0  },
-	{ "firefox",  NULL,       NULL,       1 << 8,       0,           -1,        0  },
-	{ NULL,       NULL,   "scratchpad",   0,            1,           -1,       's' },
+	/* class      instance    title       tags mask     isfloating   monitor   scratch key  appicon*/
+	{ "Gimp",     NULL,       NULL,       0,            1,           -1,         0,          NULL },
+	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1,         0,          "󰈹"  },
+	{ NULL,       NULL,   "scratchpad",   0,            1,           -1,         's',        NULL },
 };
 
 /* layout(s) */

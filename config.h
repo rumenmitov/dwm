@@ -25,16 +25,26 @@ static const char *colors[][3]                   = {
 	[SchemeSel]  = { col_active, col_bg, col_bg },
 };
 
+/* appicons */
+/* NOTE: set to 0 to set to default (whitespace) */
+static char outer_separator_beg      = '|';
+static char outer_separator_end      = '|';
+static char inner_separator          = ' ';
+static unsigned truncate_icons_after = 2; /* will default to 1, that is the min */
+static char truncate_symbol[]         = "...";
 
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class  instance  title  tags mask  isfloating  monitor  scratch key*/
-	{ NULL, NULL, "scratchpad", NULL, 1, -1 , 's'},
-	{ "Thunar", NULL, NULL, NULL, 1, -1 , 'f'},
-	{ NULL, NULL, "xmessage", NULL, 1, -1 , '?'},
+	/* class  instance  title  tags mask  isfloating  monitor  scratch key  appicon*/
+	{ NULL, NULL, "scratchpad", NULL, 1, -1 , 's', ""},
+	{ NULL, NULL, "st", NULL, NULL, -1 , 0, ""},
+	{ "Thunar", NULL, NULL, NULL, 1, -1 , 'f', "📁"},
+	{ NULL, NULL, "xmessage", NULL, 1, -1 , '?', "❔"},
+	{ NULL, NULL, "Zen Browser", NULL, NULL, -1 , 0, "󰈹"},
+	{ "Emacs", NULL, NULL, NULL, NULL, -1 , 0, ""},
 };
 
 /* tagging */
