@@ -22,7 +22,7 @@ static const char col_inactive[]                 = "#c4ced4";
 static const char *colors[][3]                   = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_inactive, col_bg, col_bg },
-	[SchemeSel]  = { col_active, col_bg, col_bg },
+	[SchemeSel]  = { col_active, col_bg, col_active },
 };
 
 /* appicons */
