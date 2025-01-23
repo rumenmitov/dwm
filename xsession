@@ -1,3 +1,6 @@
+# DWM startup script
+
+exec ssh-agent zsh &
 xrandr --output eDP --primary --mode 1920x1200 &
 xrandr --output HDMI-A-0 --mode 1920x1080 --right-of eDP &
 xset dpms 0 0 0 && xset s noblank  && xset s off &
