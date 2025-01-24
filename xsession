@@ -1,5 +1,6 @@
 # DWM startup script
 
+dbus-daemon --session &
 exec ssh-agent zsh &
 xrandr --output eDP --primary --mode 1920x1200 &
 xrandr --output HDMI-A-0 --mode 1920x1080 --right-of eDP &
@@ -17,7 +18,7 @@ greenclip daemon &
 emacs --daemon &
 /usr/libexec/polkit-gnome-authentication-agent-1 &
 kdeconnectd & 
-nextcloud --background &
+nextcloudcmd --background &
 
 exec dwm
 
