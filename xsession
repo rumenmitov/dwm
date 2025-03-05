@@ -1,6 +1,7 @@
 # DWM startup script
 
 dbus-daemon --session &
+eval $(dbus-launch &) && export DBUS_SESSION_BUS_ADDRESS
 exec ssh-agent zsh &
 xrandr --output eDP --primary --mode 1920x1200 &
 xrandr --output HDMI-A-0 --mode 1920x1080 --right-of eDP &
@@ -15,10 +16,10 @@ numlockx &
 xsetroot -cursor_name left_ptr &
 xinput --set-prop 9 310 0.8 &
 greenclip daemon &
-emacs --daemon &
 /usr/libexec/polkit-gnome-authentication-agent-1 &
 kdeconnectd & 
-nextcloudcmd --background &
+nextcloud --background &
+emacs --daemon &
 
 exec dwm
 
