@@ -103,6 +103,7 @@ static const char *volumedowncmd[] = { "pamixer", "-d", "10", NULL };
 static const char *mutecmd[] = { "pamixer", "-t", NULL };
 static const char *screenshotcmd[] = { "flameshot", "gui", NULL };
 static const char *xkillcmd[] = { "xkill", NULL };
+static const char *clearclip[] = { "greenclip", "clear", NULL };
 
 /* scripts */
 static const char powermenu[] = "~/.local/share/scripts/power-menu.sh";
@@ -132,6 +133,7 @@ static Keychord *keychords[] = {
        &((Keychord){1, {{NULL, XF86XK_AudioMute}},                             spawn,          {.v = mutecmd } }),
        &((Keychord){1, {{MODKEY|ShiftMask, XK_s}},                             spawn,          {.v = screenshotcmd } }),
        &((Keychord){1, {{MODKEY|ShiftMask, XK_c}},                             spawn,          {.v = xkillcmd } }),
+       &((Keychord){1, {{MODKEY|ShiftMask, XK_x}},                             spawn,          {.v = clearclip } }),
 
        /* Popup Menus */
        &((Keychord){1, {{MODKEY, XK_q}},                                       spawn,          SHCMD(powermenu) }),
