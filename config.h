@@ -39,14 +39,15 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class  instance  title  tags mask  isfloating  monitor  scratch key  appicon*/
-	{ NULL, NULL, "scratchpad", NULL, 1, -1 , 's', ""},
-	{ NULL, NULL, "st", NULL, NULL, -1 , 0, ""},
-	{ "Thunar", NULL, NULL, NULL, 1, -1 , 'f', "📁"},
-	{ NULL, NULL, "xmessage", NULL, 1, -1 , '?', "❔"},
-	{ NULL, NULL, "Zen Browser", NULL, NULL, -1 , 0, "󰈹"},
-	{ "Emacs", NULL, NULL, NULL, NULL, -1 , 0, ""},
-	{ "Nextcloud", NULL, NULL, NULL, 1, -1 , 0, "☁️"},
-	{ "Spotube", NULL, NULL, NULL, NULL, -1 , 0, "🎧"},
+	{ NULL, NULL, "scratchpad", 0, 1, -1 , 's', ""},
+	{ NULL, NULL, "st", 0, 0, -1 , 0, ""},
+	{ "Thunar", NULL, NULL, 0, 1, -1 , 'f', "📁"},
+	{ NULL, NULL, "xmessage", 0, 1, -1 , '?', "❔"},
+	{ NULL, NULL, "Zen Browser", 0, 0, -1 , 0, "󰈹"},
+	{ "Emacs", NULL, NULL, 0, 0, -1 , 0, ""},
+	{ "Nextcloud", NULL, NULL, 0, 1, -1 , 0, "☁️"},
+	{ "audiotube", NULL, NULL, 0, 0, -1 , 0, "🎧"},
+	{ "kdeconnect.daemon", NULL, NULL, 0, 1, -1 , 0, "📱"},
 };
 
 /* tagging */
@@ -95,7 +96,7 @@ static const char *dmenucmd[] = { "dmenu_run", NULL };
 static const char *emacscmd[] = { "emacsclient", "-c", NULL };
 static const char *browsercmd[] = { "zen", NULL };
 static const char *filemanagercmd[] = { "f", "thunar", NULL };
-static const char *musiccmd[] = { "spotube", NULL };
+static const char *musiccmd[] = { "audiotube", NULL };
 static const char *brightnessupcmd[] = { "brightnessctl", "set", "+5", NULL };
 static const char *brightnessdowncmd[] = { "brightnessctl", "set", "5-", NULL };
 static const char *volumeupcmd[] = { "pamixer", "-i", "10", NULL };
@@ -119,18 +120,18 @@ static Keychord *keychords[] = {
        &((Keychord){1, {{MODKEY|ShiftMask, XK_Return}},                        togglescratch,  {.v = scratchpadcmd } }),
 
        /* Applications */
-       &((Keychord){2, {{MODKEY, XK_x}, {NULL, XK_Return}},                    spawn,          {.v = emacscmd } }),
-       &((Keychord){2, {{MODKEY, XK_x}, {NULL, XK_b}},                         spawn,          {.v = browsercmd } }),
-       &((Keychord){2, {{MODKEY, XK_x}, {NULL, XK_f}},                         togglescratch,  {.v = filemanagercmd } }),
-       &((Keychord){2, {{MODKEY, XK_x}, {NULL, XK_m}},                         spawn,          {.v = musiccmd } }),
-       &((Keychord){2, {{MODKEY, XK_x}, {NULL, XK_x}},                         spawn,          {.v = dmenucmd } }),
+       &((Keychord){2, {{MODKEY, XK_x}, {0, XK_Return}},                    spawn,          {.v = emacscmd } }),
+       &((Keychord){2, {{MODKEY, XK_x}, {0, XK_b}},                         spawn,          {.v = browsercmd } }),
+       &((Keychord){2, {{MODKEY, XK_x}, {0, XK_f}},                         togglescratch,  {.v = filemanagercmd } }),
+       &((Keychord){2, {{MODKEY, XK_x}, {0, XK_m}},                         spawn,          {.v = musiccmd } }),
+       &((Keychord){2, {{MODKEY, XK_x}, {0, XK_x}},                         spawn,          {.v = dmenucmd } }),
 
        /* Utils */
-       &((Keychord){1, {{NULL, XF86XK_MonBrightnessUp}},                       spawn,          {.v = brightnessupcmd } }),
-       &((Keychord){1, {{NULL, XF86XK_MonBrightnessDown}},                     spawn,          {.v = brightnessdowncmd } }),
-       &((Keychord){1, {{NULL, XF86XK_AudioRaiseVolume}},                      spawn,          {.v = volumeupcmd } }),
-       &((Keychord){1, {{NULL, XF86XK_AudioLowerVolume}},                      spawn,          {.v = volumedowncmd } }),
-       &((Keychord){1, {{NULL, XF86XK_AudioMute}},                             spawn,          {.v = mutecmd } }),
+       &((Keychord){1, {{0, XF86XK_MonBrightnessUp}},                       spawn,          {.v = brightnessupcmd } }),
+       &((Keychord){1, {{0, XF86XK_MonBrightnessDown}},                     spawn,          {.v = brightnessdowncmd } }),
+       &((Keychord){1, {{0, XF86XK_AudioRaiseVolume}},                      spawn,          {.v = volumeupcmd } }),
+       &((Keychord){1, {{0, XF86XK_AudioLowerVolume}},                      spawn,          {.v = volumedowncmd } }),
+       &((Keychord){1, {{0, XF86XK_AudioMute}},                             spawn,          {.v = mutecmd } }),
        &((Keychord){1, {{MODKEY|ShiftMask, XK_s}},                             spawn,          {.v = screenshotcmd } }),
        &((Keychord){1, {{MODKEY|ShiftMask, XK_c}},                             spawn,          {.v = xkillcmd } }),
        &((Keychord){1, {{MODKEY|ShiftMask, XK_x}},                             spawn,          {.v = clearclip } }),
@@ -143,11 +144,11 @@ static Keychord *keychords[] = {
        &((Keychord){1, {{MODKEY, XK_w}},                                       spawn,          SHCMD(wallpaper) }),
 
        /* System */
-       &((Keychord){2, {{MODKEY, XK_c}, {NULL, XK_Return}},                    killclient,     {0} }),
-       &((Keychord){2, {{MODKEY, XK_c}, {NULL, XK_b}},                         togglebar,      {0} }),
-       &((Keychord){2, {{MODKEY, XK_c}, {NULL, XK_m}},                         zoom,           {0} }),
-       &((Keychord){2, {{MODKEY, XK_c}, {NULL, XK_v}},                         view,           {.ui = ~0 } }),
-       &((Keychord){2, {{MODKEY, XK_c}, {NULL, XK_f}},                         togglefloating, {0} }),
+       &((Keychord){2, {{MODKEY, XK_c}, {0, XK_Return}},                    killclient,     {0} }),
+       &((Keychord){2, {{MODKEY, XK_c}, {0, XK_b}},                         togglebar,      {0} }),
+       &((Keychord){2, {{MODKEY, XK_c}, {0, XK_m}},                         zoom,           {0} }),
+       &((Keychord){2, {{MODKEY, XK_c}, {0, XK_v}},                         view,           {.ui = ~0 } }),
+       &((Keychord){2, {{MODKEY, XK_c}, {0, XK_f}},                         togglefloating, {0} }),
        &((Keychord){1, {{MODKEY, XK_j}},                                       focusstack,     {.i = +1 } }),
        &((Keychord){1, {{MODKEY, XK_k}},                                       focusstack,     {.i = -1 } }),
        &((Keychord){1, {{MODKEY, XK_h}},                                       setmfact,       {.f = -0.05} }),
