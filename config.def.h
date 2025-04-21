@@ -10,6 +10,8 @@ static const unsigned int gappov    = 30;       /* vert outer gap between window
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
+static int floatposgrid_x           = 5;        /* float grid columns */
+static int floatposgrid_y           = 5;        /* float grid rows */
 static const char *barlayout        = "tln|s";
 static const char *fonts[]          = { "monospace:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
@@ -40,9 +42,9 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor   appicon*/
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1,         NULL },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1,         "󰈹"  },
+	/* class      instance    title       tags mask     isfloating   monitor   appicon   floatpos*/
+	{ "Gimp",     NULL,       NULL,       0,            1,           -1,         NULL,   NULL},
+	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1,         "󰈹",    NULL},
 };
 
 /* layout(s) */
