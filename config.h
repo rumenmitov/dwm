@@ -10,6 +10,8 @@ static const unsigned int gappov                 = 30;       /* vert outer gap b
 static       int smartgaps                       = 1;        /* 1 means no outer gap when there is only one window */
 static const int showbar                         = 1;        /* 0 means no bar */
 static const int topbar                          = 1;        /* 0 means bottom bar */
+static int floatposgrid_x                        = 5;        /* float grid columns */
+static int floatposgrid_y                        = 5;        /* float grid rows */
 static const char *barlayout                     = "tn|s";
 static const char *fonts[]                       = { 
     "Hack Nerd Font:size=18", 
@@ -38,16 +40,16 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class  instance  title  tags mask  isfloating  monitor  scratch key  appicon*/
-	{ NULL, NULL, "scratchpad", 0, 1, -1 , 's', ""},
-	{ NULL, NULL, "st", 0, 0, -1 , 0, ""},
-	{ "Thunar", NULL, NULL, 0, 1, -1 , 'f', "📁"},
-	{ NULL, NULL, "xmessage", 0, 1, -1 , '?', "❔"},
-	{ NULL, NULL, "Zen Browser", 0, 0, -1 , 0, "󰈹"},
-	{ "Emacs", NULL, NULL, 0, 0, -1 , 0, ""},
-	{ "Nextcloud", NULL, NULL, 0, 1, -1 , 0, "☁️"},
-	{ "audiotube", NULL, NULL, 0, 0, -1 , 0, "🎧"},
-	{ "kdeconnect.daemon", NULL, NULL, 0, 1, -1 , 0, "📱"},
+	/* class  instance  title  tags mask  isfloating  monitor  scratch key  appicon   floatpos*/
+	{ NULL, NULL, "scratchpad", 0, 1, -1 , 's', "", NULL},
+	{ NULL, NULL, "st", 0, 0, -1 , 0, "", NULL},
+	{ "Thunar", NULL, NULL, 0, 1, -1 , 'f', "📁", NULL},
+	{ NULL, NULL, "xmessage", 0, 1, -1 , '?', "❔", NULL},
+	{ NULL, NULL, "Zen Browser", 0, 0, -1 , 0, "󰈹", NULL},
+	{ "Emacs", NULL, NULL, 0, 0, -1 , 0, "", NULL},
+	{ "Nextcloud", NULL, NULL, 0, 1, -1 , 0, "☁️", NULL},
+	{ "audiotube", NULL, NULL, 0, 0, -1 , 0, "🎧", NULL},
+	{ "kdeconnect.daemon", NULL, NULL, 0, 1, -1 , 0, "📱", "0x 0y 100% 100%"},
 };
 
 /* tagging */
