@@ -6,17 +6,14 @@
                              ______________
 
 
-
-
-
 1 General
 =========
 
-  	   ------------------------------------------------
-  	    Super + Shift + /       Help Menu (scratchpad) 
-  	    Super + Return                        Terminal 
-  	    Super + Shift + Return   Terminal (scratchpad) 
-  	   ------------------------------------------------
+             ------------------------------------------------
+              Super + Shift + /       Help Menu (scratchpad) 
+              Super + Return                        Terminal 
+              Super + Shift + Return   Terminal (scratchpad) 
+             ------------------------------------------------
 
 
 2 System
@@ -47,37 +44,38 @@
 
   _Prefix:_ `Super + x'
 
-  	     --------------------------------------------
-  	      Prefix + Return             Emacs (client) 
-  	      Prefix + b                         Browser 
-  	      Prefix + f       File Manager (scratchpad) 
-  	      Prefix + m                           Music 
-  	      Prefix + x            Application Launcher 
-  	     --------------------------------------------
+               --------------------------------------------
+                Prefix + Return             Emacs (client) 
+                Prefix + b                         Browser 
+                Prefix + f       File Manager (scratchpad) 
+                Prefix + m                           Music 
+                Prefix + x            Application Launcher 
+               --------------------------------------------
 
 
 4 Popup Menus
 =============
 
-  		 -----------------------------------
-  		  Super + q              Power Menu 
-  		  Super + e              Emoji Menu 
-  		  Super + Shift + e       Math Menu 
-  		  Super + Shift + v  Clipboard Menu 
-  		  Super + w          Wallpaper Menu 
-  		 -----------------------------------
+                   -----------------------------------
+                    Super + q              Power Menu 
+                    Super + e              Emoji Menu 
+                    Super + Shift + e       Math Menu 
+                    Super + Shift + v  Clipboard Menu 
+                    Super + w          Wallpaper Menu 
+                    Super + m            Monitor Menu 
+                   -----------------------------------
 
 
 5 Utils
 =======
 
-  	   -----------------------------------------------
-  	    XF86XK_MonBrightnessUp    Increase Brightness 
-  	    XF86XK_MonBrightnessDown  Decrease Brightness 
-  	    XF86XK_AudioRaiseVolume       Increase Volume 
-  	    XF86XK_AudioLowerVolume       Decrease Volume 
-  	    XF86XK_AudioMute                  Toggle Mute 
-  	    Super + Shift + s                  Screenshot 
-  	    Super + Shift + x                  Super Kill 
-  	    Shift + CapsLock                Change Keymap 
-  	   -----------------------------------------------
+             -----------------------------------------------
+              XF86XK_MonBrightnessUp    Increase Brightness 
+              XF86XK_MonBrightnessDown  Decrease Brightness 
+              XF86XK_AudioRaiseVolume       Increase Volume 
+              XF86XK_AudioLowerVolume       Decrease Volume 
+              XF86XK_AudioMute                  Toggle Mute 
+              Super + Shift + s                  Screenshot 
+              Super + Shift + x                  Super Kill 
+              Shift + CapsLock                Change Keymap 
+             -----------------------------------------------

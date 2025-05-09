@@ -114,6 +114,7 @@ static const char emoji[] = "~/.local/share/scripts/emojis.sh";
 static const char math[] = "~/.local/share/scripts/math-symbols.sh";
 static const char clipboard[] = "~/.local/share/scripts/clipboard.sh";
 static const char wallpaper[] = "~/.local/share/scripts/wallpaper.sh";
+static const char monitor[] = "~/.local/share/scripts/monitor.lua";
 
 static Keychord *keychords[] = {
        /* Keys        function        argument */
@@ -144,6 +145,7 @@ static Keychord *keychords[] = {
        &((Keychord){1, {{MODKEY|ShiftMask, XK_e}},                             spawn,          SHCMD(math) }),
        &((Keychord){1, {{MODKEY|ShiftMask, XK_v}},                             spawn,          SHCMD(clipboard) }),
        &((Keychord){1, {{MODKEY, XK_w}},                                       spawn,          SHCMD(wallpaper) }),
+       &((Keychord){1, {{MODKEY, XK_m}},                                       spawn,          SHCMD(monitor) }),
 
        /* System */
        &((Keychord){2, {{MODKEY, XK_c}, {0, XK_Return}},                    killclient,     {0} }),

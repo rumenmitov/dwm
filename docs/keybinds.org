@@ -63,6 +63,7 @@ _Prefix:_ =Super + x=
 | Super + Shift + e |      Math Menu |
 | Super + Shift + v | Clipboard Menu |
 | Super + w         | Wallpaper Menu |
+| Super + m         |   Monitor Menu |
 |-------------------+----------------|
 #+end_center
 
