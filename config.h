@@ -43,12 +43,12 @@ static const Rule rules[] = {
 	/* class  instance  title  tags mask  isfloating  monitor  scratch key  appicon   floatpos*/
 	{ NULL, NULL, "scratchpad", 0, 1, -1 , 's', "", NULL},
 	{ NULL, NULL, "st", 0, 0, -1 , 0, "", NULL},
-	{ "Thunar", NULL, NULL, 0, 1, -1 , 'f', "📁", NULL},
+	{ "Thunar", NULL, NULL, 0, 1, -1 , 'f', "📁", "0x 0y 50% 50%"},
 	{ NULL, NULL, "xmessage", 0, 1, -1 , '?', "❔", NULL},
 	{ NULL, NULL, "Zen Browser", 0, 0, -1 , 0, "󰈹", NULL},
 	{ "Emacs", NULL, NULL, 0, 0, -1 , 0, "", NULL},
-	{ "Nextcloud", NULL, NULL, 0, 1, -1 , 0, "☁️", NULL},
-	{ "audiotube", NULL, NULL, 0, 0, -1 , 0, "🎧", NULL},
+	{ "Nextcloud", NULL, NULL, 1<<8, 1, -1 , 0, "☁️", NULL},
+	{ "Moosync", NULL, NULL, 0, 0, -1 , 0, "🎧", NULL},
 	{ "kdeconnect.daemon", NULL, NULL, 0, 1, -1 , 0, "📱", "0x 0y 100% 100%"},
 };
 
@@ -98,7 +98,7 @@ static const char *dmenucmd[] = { "dmenu_run", NULL };
 static const char *emacscmd[] = { "emacsclient", "-c", NULL };
 static const char *browsercmd[] = { "zen", NULL };
 static const char *filemanagercmd[] = { "f", "thunar", NULL };
-static const char *musiccmd[] = { "audiotube", NULL };
+static const char *musiccmd[] = { "moosync", NULL };
 static const char *brightnessupcmd[] = { "brightnessctl", "set", "+5", NULL };
 static const char *brightnessdowncmd[] = { "brightnessctl", "set", "5-", NULL };
 static const char *volumeupcmd[] = { "pamixer", "-i", "10", NULL };
@@ -106,9 +106,9 @@ static const char *volumedowncmd[] = { "pamixer", "-d", "10", NULL };
 static const char *mutecmd[] = { "pamixer", "-t", NULL };
 static const char *screenshotcmd[] = { "flameshot", "gui", NULL };
 static const char *xkillcmd[] = { "xkill", NULL };
-static const char *clearclip[] = { "greenclip", "clear", NULL };
 
 /* scripts */
+static const char clearclip[] = "~/.local/share/scripts/clear-clipboard.sh";
 static const char powermenu[] = "~/.local/share/scripts/power-menu.sh";
 static const char emoji[] = "~/.local/share/scripts/emojis.sh";
 static const char math[] = "~/.local/share/scripts/math-symbols.sh";
@@ -137,7 +137,7 @@ static Keychord *keychords[] = {
        &((Keychord){1, {{0, XF86XK_AudioMute}},                             spawn,          {.v = mutecmd } }),
        &((Keychord){1, {{MODKEY|ShiftMask, XK_s}},                             spawn,          {.v = screenshotcmd } }),
        &((Keychord){1, {{MODKEY|ShiftMask, XK_c}},                             spawn,          {.v = xkillcmd } }),
-       &((Keychord){1, {{MODKEY|ShiftMask, XK_x}},                             spawn,          {.v = clearclip } }),
+       &((Keychord){1, {{MODKEY|ShiftMask, XK_x}},                             spawn,          SHCMD(clearclip) }),
 
        /* Popup Menus */
        &((Keychord){1, {{MODKEY, XK_q}},                                       spawn,          SHCMD(powermenu) }),
