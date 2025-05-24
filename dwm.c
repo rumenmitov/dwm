@@ -863,6 +863,8 @@ drawbar(Monitor *m)
 	drw_setscheme(drw, scheme[SchemeNorm]);
 	drw_text(drw, 0, 0, m->ww, bh, 0, "", 0); /* draw background */
 
+  int icons_per_tag[LENGTH(tags)];
+
 	for (i = 0; i < strlen(barlayout); i++) {
 		switch (barlayout[i]) {
 			case 'l':
@@ -905,7 +907,6 @@ drawbar(Monitor *m)
 				break;
 
 			case 't':
-				int icons_per_tag[LENGTH(tags)];
 				memset(icons_per_tag, 0, LENGTH(tags) * sizeof(int));
 
 				for (int i = 0; i < LENGTH(tags); i++) {

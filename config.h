@@ -150,9 +150,9 @@ static Keychord *keychords[] = {
        /* System */
        &((Keychord){2, {{MODKEY, XK_c}, {0, XK_Return}},                    killclient,     {0} }),
        &((Keychord){2, {{MODKEY, XK_c}, {0, XK_b}},                         togglebar,      {0} }),
-       &((Keychord){2, {{MODKEY, XK_c}, {0, XK_m}},                         zoom,           {0} }),
        &((Keychord){2, {{MODKEY, XK_c}, {0, XK_v}},                         view,           {.ui = ~0 } }),
        &((Keychord){2, {{MODKEY, XK_c}, {0, XK_f}},                         togglefloating, {0} }),
+       &((Keychord){1, {{MODKEY, XK_s}},                                       zoom,           {0} }),
        &((Keychord){1, {{MODKEY, XK_j}},                                       focusstack,     {.i = +1 } }),
        &((Keychord){1, {{MODKEY, XK_k}},                                       focusstack,     {.i = -1 } }),
        &((Keychord){1, {{MODKEY, XK_h}},                                       setmfact,       {.f = -0.05} }),
