@@ -910,8 +910,6 @@ drawbar(Monitor *m)
 				memset(icons_per_tag, 0, LENGTH(tags) * sizeof(int));
 
 				for (int i = 0; i < LENGTH(tags); i++) {
-					//if (m->tag_icons[i]) free(m->tag_icons[i]);
-
 					/* set each tag to default value */
 					m->tag_icons[i] = strndup(tags[i], strlen(tags[i]));
 				}
