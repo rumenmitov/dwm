@@ -41,9 +41,9 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class  instance  title  tags mask  isfloating  monitor  scratch key  appicon   floatpos*/
-	{ NULL, NULL, "scratchpad", 0, 1, -1 , 's', "", NULL},
+	{ NULL, NULL, "scratchpad", 0, 1, -1 , 's', "", "50% 50% 95% 95%"},
 	{ NULL, NULL, "st", 0, 0, -1 , 0, "", NULL},
-	{ "Thunar", NULL, NULL, 0, 1, -1 , 'f', "📁", "0x 0y 50% 50%"},
+	{ "Thunar", NULL, NULL, 0, 1, -1 , 'f', "📁", "50% 50% 75% 75%"},
 	{ NULL, NULL, "xmessage", 0, 1, -1 , '?', "❔", NULL},
 	{ NULL, NULL, "Zen Browser", 0, 0, -1 , 0, "󰈹", NULL},
 	{ "Emacs", NULL, NULL, 0, 0, -1 , 0, "", NULL},
